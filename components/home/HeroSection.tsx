@@ -39,7 +39,7 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <Link
-                href="https://amazon.com"
+                href="https://www.amazon.in/s?k=Ross+Bonacci+books&i=digital-text&crid=2Q342QIED58VE&sprefix=ross+bonacci+books%2Cdigital-text%2C369&ref=nb_sb_noss"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 px-7 sm:px-9 py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-sky-200 hover:bg-sky-700 transition-all"
