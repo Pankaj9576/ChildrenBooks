@@ -4,6 +4,19 @@ import Image from 'next/image'
 const books = [
   {
     id: 1,
+    storyType: 'A BEDTIME STORY',
+    title: 'Dorothy the Dancing Hippopotamus',
+    description:
+      'Libby the Dancing Giraffe, helps Dorothy achieve her dreams by supporting and encouraging Dorothy as an amazing friend.',
+    lesson:
+      'A heartwarming lesson on overcoming stage fright and building the courage to shine',
+    status: 'available',
+    coverImage: '/books/dorothy-hippopotamus.jpg',
+    amazonUrl:
+      'https://www.amazon.in/Dorothy-Dancing-Hippopotamus-Dreaming-Finding-ebook/dp/B0DV9TJ3L7/ref=sr_1_1?crid=17G8D6YTR1TTJ&dib=eyJ2IjoiMSJ9.xXBdpi_XHHJyHdAnRRqYHw.xD234xJjnCR5ywBJ8x6Kx2MzFUWselSaVJ6fxW8HFGc&dib_tag=se&keywords=Dorothy+the+Dancing+Hippopotamus&qid=1770701199&s=digital-text&sprefix=dorothy+the+dancing+hippopotamus%2Cdigital-text%2C402&sr=1-1',
+  },
+  {
+    id: 2,
     storyType: 'A DAYTIME STORY',
     title: 'Rossi and Lucy Go to the Beach',
     description:
@@ -11,9 +24,11 @@ const books = [
     lesson: 'Teaches sun safety and outdoor awareness',
     status: 'available',
     coverImage: '/books/rossi-lucy-beach.jpg',
+    amazonUrl:
+      'https://www.amazon.in/Rossi-Lucy-Beach-Ross-Bonacci/dp/0987383124/ref=sr_1_1?crid=I4V4L6839ZX2&dib=eyJ2IjoiMSJ9.DpgUjNJZvDm2ZxHfO_jrUA.lt_hhyhl2G-aFny3TR5ZU3wduHh9sO9P00cn9CHx-Do&dib_tag=se&keywords=rossi+and+lucy+go+to+the+beach&qid=1770700254&sprefix=rossi+and+lucy+go+to+the+beac%2Caps%2C570&sr=8-1',
   },
   {
-    id: 2,
+    id: 3,
     storyType: 'A BEDTIME STORY',
     title: 'The King, the Queen and the Mouse',
     description:
@@ -21,9 +36,11 @@ const books = [
     lesson: 'Teaches self-acceptance and celebrating differences',
     status: 'available',
     coverImage: '/books/king-queen-mouse.jpg',
+    amazonUrl:
+      'https://www.amazon.in/King-Queen-Mouse-Time-Story/dp/1452503737/ref=sr_1_1?crid=1Z8EIEDM1W31H&dib=eyJ2IjoiMSJ9.FMAzkjyN1JTqks-_3uP1Jvexc47z_yfXK-ZyRJA--BuG0ShKFo5p32piSXtJPmNsu1HSkI6i9TavNJbcRubddkIdjvO8iQHLKWEv1JoCDIkn1CtAhoKyDxb9Rih9lg07rytL9Mvi1O7gk6jUhWZTp93JwqP5P5prBGSb_RlG6dbPCon3TxbLTYyv5yrPbir5bEAcO52PdfBr_BFWSUms3O88jUk4l5k4nQ4Blugo7FA.3kTZPoPOyemPHHuhIrAxeQnKa_zkRRevn7Lh2So1mJ0&dib_tag=se&keywords=the+king+the+queen+and+the+mouse&qid=1770700146&sprefix=the+king+the+queen+and+the+mouse%2Caps%2C440&sr=8-1',
   },
   {
-    id: 3,
+    id: 4,
     storyType: 'A BEDTIME STORY',
     title: 'Eddie the Dragon',
     description:
@@ -31,9 +48,11 @@ const books = [
     lesson: 'Celebrates friendship and acceptance',
     status: 'available',
     coverImage: '/books/eddie-dragon.jpg',
+    amazonUrl:
+      'https://www.amazon.in/Eddie-Dragon-Ross-Bonacci/dp/0987383108/ref=sr_1_1?crid=1ZRPHE81MXKEA&dib=eyJ2IjoiMSJ9.9ahxzPhoWyu-pM43a2pm0e3ZPRftZKOuvx5jpJ-EZP8B1gb0B9rwmD8CIrTmJduClon4_UpVzpA8R5M3eelQjDy2O8B4jIpmFHyrrou7UZMogcGGMZFcIj8x_ZepZe47V2J2CX60PMcYZ-uOrOAxXLTfqiLcOeCbLH6kBIOAdUljl7cHe4W609wetx5YhowJOYKWsTg1fB9Vu8mcwbSXC6QbUiAzermEJ2Ktzk_TdUI.NGDbMjk9d23UTzKum1mBZzq59NXil6v8uvk6VkjbAJI&dib_tag=se&keywords=eddie+the+dragon&qid=1770699910&sprefix=eddie+the+drago%2Caps%2C426&sr=8-1',
   },
   {
-    id: 4,
+    id: 5,
     storyType: 'A DAYTIME STORY',
     title: 'Show and Tell with Rossi & Lucy',
     description:
@@ -41,6 +60,8 @@ const books = [
     lesson: 'Encourages confidence in public speaking',
     status: 'available',
     coverImage: '/books/show-tell.jpg',
+    amazonUrl:
+      'https://www.amazon.in/Show-Tell-Rossi-Lucy-Daytime/dp/1452504563/ref=sr_1_1?crid=19JMLUO54ONBI&dib=eyJ2IjoiMSJ9.4uLC185ZE_Si9QHVvl8Y-8CMt6blJg3Uq5nvibf989zdjuHc0_jg0rK33mMnmsA_.jm1grVOyoxm1NJQs0D1HZBdpnC8NFtWfsSqFOx6sPYI&dib_tag=se&keywords=show+and+tell+with+ross&qid=1770700299&sprefix=show+and+tell+with%2Caps%2C1619&sr=8-1',
   },
 ]
 
@@ -125,9 +146,14 @@ export default function BooksPage() {
             {books.map((book, index) => (
               <article
                 key={book.id}
-                className="group relative flex flex-col rounded-2xl border border-sky-100 bg-white backdrop-blur-xl shadow-[0_14px_50px_rgba(15,23,42,0.08)] hover:-translate-y-1.5 hover:border-red-300 hover:shadow-[0_18px_70px_rgba(239,68,68,0.35)] transition-all duration-300 overflow-hidden"
+                className="group relative flex flex-col rounded-2xl border border-sky-100 bg-white backdrop-blur-xl shadow-[0_14px_50px_rgba(15,23,42,0.08)] hover:-translate-y-1.5 hover:border-sky-400 hover:shadow-[0_18px_70px_rgba(56,189,248,0.45)] transition-all duration-300 overflow-hidden"
                 style={{ animationDelay: `${0.16 + index * 0.03}s` }}
               >
+                {/* Glow background that matches button gradient */}
+                <div className="pointer-events-none absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-sky-600 via-sky-500 to-sky-700 blur-2xl" />
+                </div>
+
                 {/* Cover */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden">
                   <Image
@@ -193,9 +219,9 @@ export default function BooksPage() {
                       </p>
                     </div>
 
-                    {/* Amazon button */}
+                    {/* Amazon button – per-book link */}
                     <a
-                      href="https://amazon.com"
+                      href={book.amazonUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group/button inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-600 via-sky-500 to-sky-700 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-sky-200 hover:shadow-[0_18px_55px_rgba(56,189,248,0.7)] transition-all"
@@ -224,7 +250,7 @@ export default function BooksPage() {
               self-love. All books are available now on Amazon.
             </p>
             <a
-              href="https://amazon.com"
+              href="https://www.amazon.in/s?k=Ross+Bonacci+books&i=digital-text&crid=2Q342QIED58VE&sprefix=ross+bonacci+books%2Cdigital-text%2C369&ref=nb_sb_noss"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 text-white px-7 sm:px-9 py-3 sm:py-3.5 text-sm sm:text-base font-semibold shadow-lg shadow-sky-200 hover:bg-sky-700 transition-all"
